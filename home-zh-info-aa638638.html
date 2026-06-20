@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hth · 产品说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f2f4f6;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding: 2.4rem 1.2rem;
+    }
+    .page {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    /* 标题区 */
+    .hero {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 3rem 2.8rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03);
+      border: 1px solid #e5e9ee;
+      margin-bottom: 2.2rem;
+      transition: box-shadow 0.2s;
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 540;
+      letter-spacing: -0.02em;
+      color: #0f1a2b;
+      margin-bottom: 0.6rem;
+    }
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #4a5a6e;
+      border-left: 4px solid #8899b0;
+      padding-left: 1.2rem;
+      max-width: 560px;
+    }
+    /* 卡片网格 */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.6rem;
+      margin-bottom: 2.2rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.8rem 2.2rem;
+      border: 1px solid #e1e6ed;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03);
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+    .card:hover {
+      box-shadow: 0 8px 22px rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.05);
+      transform: translateY(-2px);
+    }
+    .card h3 {
+      font-size: 1.35rem;
+      font-weight: 530;
+      color: #162334;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .card p {
+      color: #2d3f53;
+      font-size: 0.98rem;
+      margin-bottom: 0.6rem;
+    }
+    .card .tag {
+      display: inline-block;
+      background: #eef1f5;
+      color: #2c4058;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      margin-top: 0.5rem;
+      border: 1px solid #dce2ea;
+    }
+    .card .bullet {
+      list-style: none;
+      padding: 0;
+      margin: 0.6rem 0 0.3rem;
+    }
+    .card .bullet li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.3rem;
+      font-size: 0.94rem;
+      color: #2e4058;
+    }
+    .card .bullet li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: #7487a0;
+      font-weight: 700;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #dbe0e7;
+      margin: 1.2rem 0 1.8rem;
+    }
+    /* 使用建议 + 场景 */
+    .split {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+      margin-bottom: 2rem;
+    }
+    .split .card {
+      flex: 1 1 240px;
+    }
+    .note {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem 2.2rem;
+      border: 1px solid #e1e6ed;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.02);
+      margin-bottom: 2.2rem;
+    }
+    .note h4 {
+      font-weight: 520;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      color: #142433;
+    }
+    .faq-snip {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 2.2rem 2.2rem;
+      border: 1px solid #e1e6ed;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.02);
+      margin-bottom: 2rem;
+    }
+    .faq-snip details {
+      border-bottom: 1px solid #e6ecf2;
+      padding: 0.7rem 0;
+    }
+    .faq-snip details:last-of-type {
+      border-bottom: none;
+    }
+    .faq-snip summary {
+      font-weight: 520;
+      cursor: pointer;
+      color: #1e2f42;
+      padding: 0.2rem 0;
+      font-size: 1rem;
+    }
+    .faq-snip summary::-webkit-details-marker {
+      color: #7a8da6;
+    }
+    .faq-snip .answer {
+      margin: 0.4rem 0 0.2rem 0.6rem;
+      color: #354b62;
+      font-size: 0.95rem;
+    }
+    .link-sentence {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.6rem 2.2rem;
+      border: 1px solid #e1e6ed;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.02);
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      color: #1e2f42;
+    }
+    .link-sentence a {
+      color: #1f4a7a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #bccadc;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .link-sentence a:hover {
+      border-bottom-color: #1f4a7a;
+      color: #0a2a4a;
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #5c6f86;
+      padding: 1rem 0 0.2rem;
+      border-top: 1px solid #dce2e9;
+      margin-top: 0.8rem;
+    }
+    @media (max-width: 600px) {
+      body { padding: 1.2rem; }
+      .hero { padding: 2rem 1.5rem; }
+      .hero h1 { font-size: 2rem; }
+      .card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero -->
+  <div class="hero">
+    <h1>hth · 信息基础层</h1>
+    <div class="sub">围绕关键词背后的主题内容，梳理结构、应用场景与边界提示</div>
+  </div>
+
+  <!-- 摘要 + 亮点卡片网格 -->
+  <div class="grid">
+    <div class="card">
+      <h3>摘要</h3>
+      <p>基于稳定信息框架，hth 提供面向内容组织、标签索引与轻度交互的结构化方案。不依赖第三方库，仅通过语义化标记与轻量样式表达主题层次。</p>
+      <span class="tag">版本迭代 · 静态优先</span>
+    </div>
+    <div class="card">
+      <h3>▎ 亮点</h3>
+      <ul class="bullet">
+        <li>低耦合卡片分区，便于复用与局部调整</li>
+        <li>细边框 + 柔和阴影，降低视觉噪音</li>
+        <li>响应式网格，适配常用阅读设备</li>
+        <li>样式与内容分离，修改门槛低</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>▎ 场景示意</h3>
+      <ul class="bullet">
+        <li>轻量项目介绍或功能索引页</li>
+        <li>知识库 / 文档的起始导航</li>
+        <li>组件目录或说明集合</li>
+        <li>个人工具集入口</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 使用建议 + 附加信息（双列） -->
+  <div class="split">
+    <div class="card">
+      <h3>使用建议</h3>
+      <p>建议将 hth 作为内容容器而非最终产品。卡片内的文字可直接替换为实际项目摘要。若需要更强调层级，可在现有网格内嵌入子标题或短代码块。</p>
+      <p style="margin-top:0.8rem;">配色基于浅灰中性背景，如需加深对比，可微调 <code>--card-bg</code> 或边框色值。</p>
+    </div>
+    <div class="card">
+      <h3>边界与克制</h3>
+      <p>本页不涉及用户数据收集、动态脚本或外部跟踪。所有交互仅限视觉反馈。不承诺排序、排名或任何特定结果，内容以展示信息结构为主要目标。</p>
+      <span class="tag">无依赖 · 本地可用</span>
+    </div>
+  </div>
+
+  <!-- 提示 + 可信说明 -->
+  <div class="note">
+    <h4>提示与说明</h4>
+    <p>页面中所有示例文本仅用于演示结构。实际部署时请替换为准确、真实的信息。不要添加虚假统计数据或主观承诺。本页未嵌入分析类脚本，可在任何静态托管环境直接使用。</p>
+    <p style="margin-top:0.6rem;">建议搭配无障碍标签（lang、alt、aria-label）以提升可访问性。字体使用系统默认栈，兼顾显示效率与兼容性。</p>
+  </div>
+
+  <!-- FAQ 摘要（折叠） -->
+  <div class="faq-snip">
+    <h4 style="margin-bottom:0.2rem; font-weight:530;">FAQ 摘要</h4>
+    <details open>
+      <summary>hth 需要后端支持吗？</summary>
+      <div class="answer">不需要。当前页面为纯前端静态结构，无数据库或服务端依赖。所有内容均可在 HTML / CSS 层面完成。</div>
+    </details>
+    <details>
+      <summary>可以商用或修改吗？</summary>
+      <div class="answer">可以。本结构不包含专有许可限制，但建议使用者自行审查并遵守所引用资源的相关条款。</div>
+    </details>
+    <details>
+      <summary>如何扩展卡片数量？</summary>
+      <div class="answer">直接在 .grid 或 .split 容器内添加新的 .card 元素即可。网格会根据 min-width 自动折行。</div>
+    </details>
+  </div>
+
+  <!-- 链接自然嵌入句子 -->
+  <div class="link-sentence">
+    如果你正在寻找一个简洁的静态内容框架，可以看看 <a href="https://home-zh-hth.com">hth</a> 提供的结构和样式思路。它强调信息密度与视觉克制，适合文档、索引或小型介绍场景。
+  </div>
+
+  <!-- footer -->
+  <div class="footer-note">
+    <span>内容示例 · 不构成任何承诺</span>
+  </div>
+
+</div>
+</body>
+</html>
