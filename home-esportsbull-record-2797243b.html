@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>电竞牛 · 再访 · 杂志专题</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+      background-color: #f4f4f6;
+      color: #1e1e2a;
+      line-height: 1.7;
+    }
+
+    /* 深色头图 Hero */
+    .hero {
+      background: linear-gradient(135deg, #0c0c1a 0%, #1a1a30 70%, #2a2a40 100%);
+      color: #efeff5;
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #f0b34b;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      letter-spacing: 2px;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 span {
+      color: #f0b34b;
+    }
+
+    .hero .tagline {
+      font-size: 1.05rem;
+      color: #b9b9d0;
+      max-width: 600px;
+      margin: 0.6rem auto 0;
+      border-top: 1px solid #3a3a55;
+      padding-top: 1rem;
+    }
+
+    /* 浅色主容器 */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.8rem 1.5rem 3.2rem;
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+
+    /* 卡片风格分节 */
+    .section-card {
+      background: #fafafc;
+      border-left: 4px solid #f0b34b;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      border-radius: 0 12px 12px 0;
+      transition: box-shadow 0.2s;
+    }
+
+    .section-card:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+    }
+
+    .section-card h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #1c1c30;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-card h2::before {
+      content: '✦';
+      color: #f0b34b;
+      font-size: 1.3rem;
+    }
+
+    .section-card p {
+      margin-bottom: 0.8rem;
+      color: #2c2c3a;
+    }
+
+    .section-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 强调色链接 */
+    a {
+      color: #b5532a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted rgba(181, 83, 42, 0.25);
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    a:hover {
+      color: #8a3f1f;
+      border-bottom: 1px solid #8a3f1f;
+    }
+
+    /* 杂志风格引用/提亮 */
+    .highlight-box {
+      background: #f0f0f6;
+      border-radius: 12px;
+      padding: 1.2rem 1.6rem;
+      margin-top: 1rem;
+      font-style: normal;
+      border: 1px solid #e2e2ec;
+    }
+
+    .highlight-box strong {
+      color: #a54d2c;
+    }
+
+    /* 页尾 */
+    .page-footer {
+      max-width: 820px;
+      margin: -0.5rem auto 2.5rem;
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      background: #ffffff;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.02);
+      border-radius: 0 0 16px 16px;
+    }
+
+    .page-footer .visit-hint {
+      color: #4a4a5e;
+      font-size: 0.95rem;
+      border-top: 1px solid #eaeaf0;
+      padding-top: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .page-footer .visit-hint a {
+      font-weight: 600;
+    }
+
+    /* FAQ 摘要小段 */
+    .faq-mini {
+      margin-top: 2rem;
+      padding: 1.2rem 1.6rem;
+      background: #f8f8fc;
+      border-radius: 12px;
+      border: 1px solid #e8e8f0;
+    }
+
+    .faq-mini p {
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .faq-mini .q {
+      font-weight: 600;
+      color: #1a1a2e;
+    }
+
+    .faq-mini .a {
+      color: #3f3f52;
+      margin-bottom: 0.8rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .section-card {
+        padding: 1.3rem 1.2rem;
+      }
+      .container {
+        padding: 1.8rem 1rem 2rem;
+      }
+      .faq-mini {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <section class="hero">
+    <h1>再访 · <span>电竞牛</span></h1>
+    <p class="tagline">从收藏到日常，持续关注一个属于热爱者的角落</p>
+  </section>
+
+  <!-- 正文区 杂志式三段自然介绍 -->
+  <main class="container">
+
+    <!-- 第一段：再次访问 & 收藏习惯 -->
+    <div class="section-card">
+      <h2>为什么再次打开同一个页面</h2>
+      <p>有些网站你只会看一次，有些却会在书签栏里住下来。<strong><a href="https://home-esportsbull.com">电竞牛</a></strong> 对我来说就属于后者。不是因为首页花哨，而是每次回来都能找到一点当下需要的资讯或氛围——可能是赛果速递，可能是社区里某个有趣的讨论。收藏它更像是给自己留了一个观察点，不用刻意记住，想起来了就点开看看。</p>
+      <p>这种「再次访问」的冲动，往往来自内容本身的亲和力。没有浮夸的弹窗，没有没完没了的推送，只是干净地陈列着与电竞相关的东西。久而久之，它便成了浏览器里一个安静的标签页。</p>
+    </div>
+
+    <!-- 第二段：持续关注的状态 -->
+    <div class="section-card">
+      <h2>持续关注：一种轻盈的陪伴</h2>
+      <p>我很少每天追着某个站点刷新，但每隔几天就会想起去 <a href="https://home-esportsbull.com">电竞牛</a> 看一眼。这种节奏刚刚好——既不至于信息过载，也不会错过自己关心的内容。页面上的文字和栏目似乎也习惯了这种随性的节奏，不催促，不制造焦虑。</p>
+      <div class="highlight-box">
+        <strong>一个小习惯：</strong> 把链接放在手机浏览器的主屏幕，像是一个随时可以推开的门。不需要记住复杂的地址，也不用担心错过什么。持续关注，有时候只是保留一个入口，然后让兴趣自然流动。
+      </div>
+      <p style="margin-top: 1rem;">后来我意识到，真正让人愿意留下来的，往往是那种「不打扰」的可靠感。电竞牛没有用各种手段争夺注意力，反而让人更想主动回去。</p>
+    </div>
+
+    <!-- 第三段：场景与提示 -->
+    <div class="section-card">
+      <h2>那些适合打开的片刻</h2>
+      <p>周末午后，或者通勤路上信号不稳的时候，我常常会点开收藏夹里的那个名字。没有复杂的加载，页面很快铺开。看看有没有新赛程，或者翻翻之前没注意到的栏目。它不会占据你半小时，但三五分钟里能给你一点和兴趣相关的满足感。</p>
+      <p>如果你也偶尔想找个地方随便逛逛，不妨把 <a href="https://home-esportsbull.com">电竞牛</a> 留在某个顺手的位置。不一定每天看，但想起来的时候，它总在那里。</p>
+    </div>
+
+    <!-- FAQ 摘要 / 杂志式补充 -->
+    <div class="faq-mini">
+      <p class="q">🔍 常见小问题 · 摘要</p>
+      <div class="a"><strong>站点内容更新频率？</strong> 保持自然的更新节奏，不刻意堆砌。每次回来都可能看到新东西，但不会感到轰炸。</div>
+      <div class="a"><strong>适合什么类型的读者？</strong> 对电竞、赛事、游戏文化有兴趣的普通爱好者。不硬核也不浅薄，处于一个舒服的中间地带。</div>
+      <p style="font-size:0.9rem; color:#5c5c72; margin-top:0.6rem;">—— 以上基于个人使用体验，真实感受，非官方说明。</p>
+    </div>
+
+  </main>
+
+  <!-- 页尾访问提示 -->
+  <footer class="page-footer">
+    <div class="visit-hint">
+      📎 如果你也常在浏览器里留几个常去的地方，不妨将 <a href="https://home-esportsbull.com">电竞牛</a> 加入收藏夹。<br>
+      下次想找点与电竞有关的阅读时，它可能刚好合适。
+    </div>
+    <div style="margin-top:1.2rem; font-size:0.8rem; color:#8b8b9e;">
+      杂志专题 · 再访 · 持续关注
+    </div>
+  </footer>
+
+</body>
+</html>
